@@ -12,7 +12,7 @@ module.exports = function(grunt) {
               options: {
                 prefix: 'Version[:=]\\s*'
               },
-              src: ['css/hover.css', 'scss/hover.scss', 'less/hover.less']
+              src: ['css/hover.css', 'scss/hover.scss']
             }
 
         },
@@ -26,17 +26,6 @@ module.exports = function(grunt) {
               'css/hover.css': 'scss/hover.scss'
             }
           }
-        },
-
-        less: {
-            dist: {
-                options: {
-                    style: 'expanded'
-                },
-                files: {
-                    'css/hover.css': 'less/hover.less'
-                }
-            }
         },
 
         cssmin: {
@@ -63,14 +52,6 @@ module.exports = function(grunt) {
           scss: {
             files: ['scss/**/*.scss'],
             tasks: ['sass', 'cssmin'],
-            options: {
-              spawn: false
-            }
-          },
-
-          less: {
-            files: ['less/**/*.less'],
-            tasks: ['less', 'cssmin'],
             options: {
               spawn: false
             }
